@@ -6,4 +6,4 @@ Below is a list of webinars with additional material such as slides, notebooks, 
 
 | Date       | Speaker       | Topic                            | Additional resources |
 |------------|---------------|----------------------------------|---------------------|
-| 2020-05-08 | Saunak Sen    | [Introduction to Quantitative Trait Loci (QTL) Analysis](2020-05-08/README.md) | [Q&A]() ~ [Slides]() ~ [Data analysis example]()
+| 2020-05-08 | Saunak Sen    | [Introduction to Quantitative Trait Loci (QTL) Analysis](2020-05-08/README.md) | [Q&A](2020-05-08/qa.md) ~ [Slides](2020-05-08/qtl-intro.ipynb) ~ [Data analysis example](2020-05-08/solberg-rat-analysis.ipynb)
