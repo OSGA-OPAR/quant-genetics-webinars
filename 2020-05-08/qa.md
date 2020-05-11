@@ -1,5 +1,7 @@
 # Questions and answers
 
+## Saunak Sen
+
 An edited version of the questions and comments submitted in the chat box follows.  Only comments/questions that contribute new information or insight are included.  Readers are encourages to contribute to the discussion by utilizing the issues section.
 
 > From Laura Saba : Here is the link to Dr. Sen’s documents https://github.com/OSGA-OPAR/quant-genetics-webinars
@@ -30,7 +32,7 @@ Some populations such as multiparental crosses (eg. DO, HS, CC), outbred stocks,
 
 >  From Megan Hagenauer : Wouldn’t genetic sex be a mediator instead of a co-variate?
 
-
+I would agree with you that there is some ambiguity regarding how sex should be treated.
 
 > From Milad Mortazavi : How would you adjust for sex in the permutation test?
 
@@ -77,8 +79,8 @@ In most cases, my recommendation is to run two analyses, one for main effect QTL
 
 (1) As with any other kind of study, the proper sample size is not known in advance.  However, we can make some educated guesses, if we have information about the trait under study.  For a QTL study, important considerations to consider include what strains to study, what kind of cross or population to phenotype, genotyping and phenotyping strategies.  I have a few papers with my opinions.
 
-[Sen (2005)](https://www.ncbi.nlm.nih.gov/pubmed/15781700)
-[Sen (2007)](https://www.ncbi.nlm.nih.gov/pubmed/17347894)
+- [Sen (2005)](https://www.ncbi.nlm.nih.gov/pubmed/15781700)
+- [Sen (2007)](https://www.ncbi.nlm.nih.gov/pubmed/17347894)
 
 (2) Generally, the expected LOD score is approximately proportional to the sample size (fixing the effect size, and cross/population).  The genome-wide significance threshold is independent of sample size (fixing marker density).
 
@@ -89,3 +91,5 @@ In most cases, my recommendation is to run two analyses, one for main effect QTL
 See [Price (2010)](https://www.nature.com/articles/nrg2813) for a discussion of this issue.
 
 > From Xusheng Wang : Can any statistical algorithm can be used for modeling mediator other than the covariance analysis?
+
+See question from Ciyang Wang above for approaches.  It is an active research area of causal inference.
