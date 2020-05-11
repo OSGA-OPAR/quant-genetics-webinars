@@ -8,6 +8,14 @@ An edited version of the questions and comments submitted in the chat box follow
 
 > From Joe Nadeau : Questions: Does randomization establish causality, or association, because all factors that differ are not known or cannot be measured. Same with differences. Isn’t an assumption made that they are identical except for the factor being tested. For example, microbiome, parental effects, other subtle microenvironmental differences. Both the test for differences and randomization are powerful,  but I would think it would be hard to claim causality unless one can show that the underlying assumptions are true (or reasonably true).
 
+> Also, how to handle multiple phenotypes?
+
+Yes, absolutely.  Here the genetic randomization is happening naturally and unlike randomized trials, it is not a random assignment by the investigator/experimenter.  So, first we have to accept (assume) that the genetic randomization is occurring as we are assuming it is.  We have to also be prepared to accept that the assumptions that ensure the validity of the causal diagram are met.  For example, if there is any phenotype-based selection, that diagram would be invalid.  It is worth noting that the genetic randomization balances factors at the time of randomization (in this case, meiosis); downstream factors are not balanced by this approach.  Finally, it is worth noting that some factors, such as the microbiome may be considered (highly multivariate) mediators, and how to incorporate that information remains an open and challenging problem.
+
+Sometimes, it is not clear if a trait is a mediator or part of the phenotype.  For example, in a diabetes study, if fasting blood glucose is the primary trait, is body weight a mediator or part of the phenotype?  Depending on one's point of view, or purpose, one may want to treat body weight and glucose levels as a single unit (multivariate trait).
+
+Readers might also want to read this [excellent article](https://www.ncbi.nlm.nih.gov/pubmed/12952877) by Dr. Nadeau and colleagues.
+
 > From Megan Hagenauer : What do the white sections in the genotype data mean?
 
 The white sections indicate missing data.
@@ -32,7 +40,21 @@ Some populations such as multiparental crosses (eg. DO, HS, CC), outbred stocks,
 
 >  From Megan Hagenauer : Wouldn’t genetic sex be a mediator instead of a co-variate?
 
-I would agree with you that there is some ambiguity regarding how sex should be treated.
+In general, whether a variable should be considered as a mediator or a covariate, depends on the analyst's conceptualization of the causal relationships between the variables under consideration.
+
+I agree with you that there is some ambiguity regarding how sex should be treated.  We can think of sex as a genetic factor, or we can think of it as a phenotype that depends on genetic elements on the X chromosome (and perhaps elsewhere).  In the latter case, sex might be considered a mediator.
+
+If we consider sex to be determined by the X chromosome alone, then for all autosomal loci genotypes will be approximately independent of sex (or X chromosome genotype).  The causal diagram would look like this (here I am assuming that the autosomal marker and QTL are on the same and therefore meiosis connects them both; sex is not connected to the autosomal QTL because meiosis on different chromosomes is approximately independent).
+
+        --------> Autosomal Marker .............
+       |               |                       :
+       |               |                       :
+    Meiosis -----> Autosomal QTL ---------> Phenotype
+	                                           ^
+                                               |
+                     Sex ----------------------
+
+In this setting, the role of sex is more similar to a covariate (cf. the causal diagram for a covariate).
 
 > From Milad Mortazavi : How would you adjust for sex in the permutation test?
 
