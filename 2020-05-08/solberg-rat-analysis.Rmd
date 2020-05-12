@@ -25,6 +25,8 @@ This is a brief re-analysis of a rat F$_2$ intercross.  It has data from several
 if(!require("qtl"))
     install.packages("qtl")
 library(qtl)
+# set random number seed for reproducibility
+set.seed(2020-05-08)
 ```
 
 ## Read in data
@@ -86,6 +88,7 @@ Both traits have a less skewed unimodal distribution after log transformation.  
 ### Scatterplot
 
 ```{r}
+# make plots square
 options(repr.plot.width=8,repr.plot.height=8)
 ```
 
@@ -148,6 +151,7 @@ outglucose30 <- scanone(cr,pheno.col=log2(cr$pheno$glucose30))
 ```
 
 ```{r}
+# make plots wide for genome scans
 options(repr.plot.width=16)
 ```
 
@@ -169,15 +173,12 @@ We make about a 1000 permutations (`n.perm`), and to speed the computations, we 
 outglucose30Perm <- scanone(cr,pheno.col=log2(cr$pheno$glucose30),n.perm=1024,n.cluster=4)
 ```
 
-```{r}
-hist(as.vector(outglucose30Perm),breaks=seq(0,6,by=0.1),
-     freq=FALSE,ylim=c(0,2.5),xlab="LOD score",main="Histogram of permutation max LOD score vs Chi-square distribution")
-lines(seq(0,6,by=0.1),log(10)*2*dchisq(log(10)*2*seq(0,6,by=0.1),df=2))
-```
+We now compare the histogram of the maximum LOD scores from each of the permuted genome scans to the theoretical distribution of the LOD score (a $\chi^2$ distribution with 2 degrees of freedom scaled by $2\log(10)$).
 
 ```{r}
-r = rank(as.vector(outglucose30Perm)*log(10)*2)
-plot(log(1-(1:1024)/1025),sort(as.vector(outglucose30Perm)*log(10)*2))
+hist(as.vector(outglucose30Perm),breaks=seq(0,7,by=0.1),
+     freq=FALSE,ylim=c(0,2.5),xlab="LOD score",main="Histogram of permutation max LOD score vs Chi-square distribution")
+lines(seq(0,6,by=0.1),log(10)*2*dchisq(log(10)*2*seq(0,6,by=0.1),df=2))
 ```
 
 ```{r}
@@ -204,7 +205,11 @@ outglucose30Sex <- scanone(cr,addcovar=cr$pheno$sex,pheno.col=log2(cr$pheno$gluc
 outglucose30SexPerm <- scanone(cr,addcovar=cr$pheno$sex,perm.strata=cr$pheno$sex,pheno.col=log2(cr$pheno$glucose30),n.perm=1024,n.cluster=4)
 ```
 
-Did the genome scan change? It made the genome scan (in blue) a little higher at most loci.
+```{r}
+summary(outglucose30SexPerm)
+```
+
+Did the genome scan change? It made the genome scan with sex (in blue) a little higher at most loci compared to the default scan (in black).
 
 ```{r}
 plot(outglucose30,outglucose30Sex)
@@ -222,6 +227,8 @@ add.threshold(outglucose30Sex,perms = outglucose30SexPerm,alpha = 0.1, lty=2)
 summary(outglucose30Sex)
 ```
 
+We now perform a genome scan adjusting for sex and cross direction as measured by the paternal grandmother (`pgm`) variable.  We will permute creating strata by sex and cross direction.
+
 ```{r}
 # create model matrix of numerical variables minus intercept
 sexpgm <- model.matrix(~cr$pheno$sex+cr$pheno$pgm-1)
@@ -236,7 +243,13 @@ outglucose30SexPGMPerm <- scanone(cr,addcovar=sexpgm,perm.strata=sexpgmstrata,ph
 ```
 
 ```{r}
-plot(outglucose30SexPGM)
+summary(outglucose30SexPGMPerm)
+```
+
+Notice that the permutation threshold is not very different from the original one (without sex and cross direction), but the scans are a little taller, reflecting added power from adjustment due to sex and cross direction.
+
+```{r}
+plot(outglucose30,outglucose30SexPGM)
 add.threshold(outglucose30SexPGM,perms = outglucose30SexPGMPerm,alpha = 0.05)
 add.threshold(outglucose30SexPGM,perms = outglucose30SexPGMPerm,alpha = 0.1, lty=2)
 ```
