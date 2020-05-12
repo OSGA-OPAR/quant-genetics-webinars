@@ -1,0 +1,278 @@
+---
+jupyter:
+  jupytext:
+    formats: ipynb,Rmd
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.2'
+      jupytext_version: 1.4.2
+  kernelspec:
+    display_name: R
+    language: R
+    name: ir
+---
+
+# Analysis of a rat intercross
+
+
+This is a brief re-analysis of a rat F$_2$ intercross.  It has data from several studies that studied depression-like behavior research in the reciprocal intercross of WKY and Fisher 344 rat strains. The data was downloaded from the [QTL Archive](https://phenome.jax.org/projects/Solberg1).  We will use the [R/qtl](https://rqtl.org/) package for analyzing this data.
+
+
+## Install and load R/qtl
+
+```{r}
+if(!require("qtl"))
+    install.packages("qtl")
+library(qtl)
+```
+
+## Read in data
+
+We read in data from the URL provided.  The CSV file is in R/qtl format, so it can read it in easily.  We have to help it by telling it that the data is in the CSV format (`format="csv"`), that the data is an F2 (`crosstype="f2"`), and how the genotypes are coded (`genotypes=c("a","h","b","c","d")`).  If the cross is between the A and B strains, then the `genotypes` argument should state how the AA, AB, BB, not BB (AB or AA), and not AA (AB or BB) are coded.  Finally, the labels of the alleles are stated in the `alleles` argument.  It is helpful for readability.
+
+```{r}
+solbergURL <- "https://phenomedoc.jax.org/QTL_Archive/solberg_2004/Solberg2004_F344xWKY_Data.csv"
+cr <- read.cross(file=solbergURL,format="csv",genotypes=c("a","h","b","c","d"),crosstype="f2",alleles=c("F344","WKY"))
+```
+
+Some markers were in the same position, so we use `jittermap` to put them in slightly different positions.
+
+```{r}
+cr <- jittermap(cr)
+```
+
+Here's a summary of the data. We have 25 phenotypes (this includes sex, cross direction, and litter). There is a small percentage of dominant markers; otherwise the genotypes are in the expected 1:2:1 ratio.  Two cross was performed in two directions, and that explains the genotype proportions in the X chromosome.  This is a more complicated topic, and we refer the reader to [Broman et. al (2006)](https://www.ncbi.nlm.nih.gov/pubmed/17028340) for an excellent treatment.
+
+```{r}
+summary(cr)
+```
+
+## Exploring the phenotypes
+
+The cross object we have read our data into, has two data structures called `geno` (genotypes) and `pheno` (phenotypes).  Let us explore the phenotypes (traits).  First, let's see what it has.
+
+```{r}
+names(cr$pheno)
+```
+
+Please refer to the [dataset documentation](https://phenome.jax.org/projects/Solberg1) and associated publications for details about the traits/phenotypes.  Some measurements in this dataset do not appear in the parent papers.
+
+The first four are animal id (`animal`), sex (`sex`), paternal grandmother (`pgm`) and litter (`litter`). At 15 weeks of age, animals were placed in a restraint
+tube for 30 min, after which blood was collected on ice for determination of post-restraint stress glucose levels.  Let us look at two traits, the fasting glucose, and the glucose levels after a glucose challenge (collected two weeks later).  These metabolic measures are supposed to be altered by the stress of the restraint.
+
+
+### Histograms
+
+```{r}
+hist(cr$pheno$glucpostglucchall,nclass=20,main="Post challenge glucose",xlab="mg/dL")
+```
+
+```{r}
+hist(log2(cr$pheno$glucpostglucchall),nclass=20,main="Log2 post challenge glucose",xlab="log2 mg/dL")
+```
+
+```{r}
+hist(cr$pheno$glucose30,nclass=20,main="Post restraint glucose",xlab="mg/dL")
+```
+
+```{r}
+hist(log2(cr$pheno$glucose30),nclass=20,main="Log2 post restraint glucose",xlab="log2 mg/dL")
+```
+
+Both traits have a less skewed unimodal distribution after log transformation.  This is typical of many concetration measures that are inherently positive, and behave multiplicatively.  The scatterplots of the measures reinforce this message.
+
+
+### Scatterplot
+
+```{r}
+options(repr.plot.width=8,repr.plot.height=8)
+```
+
+```{r}
+plot(cr$pheno$glucose30,cr$pheno$glucpostglucchall)
+```
+
+```{r}
+plot(log2(cr$pheno$glucose30),log2(cr$pheno$glucpostglucchall))
+```
+
+Based on this, we decided to analyze the traits on the log2 scale (also done by the study authors).
+
+
+## Comparison by sex
+
+```{r}
+library(vioplot)
+vioplot(log2(cr$pheno$glucose30)~cr$pheno$sex)
+```
+
+```{r}
+vioplot(log2(cr$pheno$glucpostglucchall)~cr$pheno$sex)
+```
+
+Males have a higher glucose levels (both measures).
+
+
+## Exploring genotypes
+
+
+### The genetic map
+
+```{r}
+plot(pull.map(cr))
+```
+
+### Genotypes on chromosome 1
+
+```{r}
+plotGeno(cr,chr=1,ind=1:40,include.xo = FALSE,cex=1.5)
+```
+
+```{r}
+table(cr$pheno$sex)
+```
+
+## Genome scan
+
+To perform genome scans, we will first calculate the genotype probabilities at a grid of locations approximately 2cM apart.  This helps us interpolate between typed markers, that were spaced about 20cM apart in this cross.
+
+```{r}
+cr <- calc.genoprob(cr,step=2)
+```
+
+Next we perform a genome scan of the glucose trait.
+
+```{r}
+outglucose30 <- scanone(cr,pheno.col=log2(cr$pheno$glucose30))
+```
+
+```{r}
+options(repr.plot.width=16)
+```
+
+```{r}
+plot(outglucose30)
+```
+
+```{r}
+summary(outglucose30)
+```
+
+### Permutation tests
+
+Since we are making essentially an ANOVA at each possible marker location, we have a mutliple comparisons problem, that can raise the false positive rate.  We use a permutation test to help adjust for that.  This adjusts for the family-wise error rate (FWER) across all locations of the genome.
+
+We make about a 1000 permutations (`n.perm`), and to speed the computations, we use 4 cores (`n.cluster`).
+
+```{r}
+outglucose30Perm <- scanone(cr,pheno.col=log2(cr$pheno$glucose30),n.perm=1024,n.cluster=4)
+```
+
+```{r}
+hist(as.vector(outglucose30Perm),breaks=seq(0,6,by=0.1),
+     freq=FALSE,ylim=c(0,2.5),xlab="LOD score",main="Histogram of permutation max LOD score vs Chi-square distribution")
+lines(seq(0,6,by=0.1),log(10)*2*dchisq(log(10)*2*seq(0,6,by=0.1),df=2))
+```
+
+```{r}
+r = rank(as.vector(outglucose30Perm)*log(10)*2)
+plot(log(1-(1:1024)/1025),sort(as.vector(outglucose30Perm)*log(10)*2))
+```
+
+```{r}
+summary(outglucose30Perm)
+```
+
+We can add two lines to the previous plot corresponding to the 5% and 10% genomewide permutation thresholds.
+
+```{r}
+plot(outglucose30)
+add.threshold(outglucose30,perms = outglucose30Perm,alpha = 0.05)
+add.threshold(outglucose30,perms = outglucose30Perm,alpha = 0.1, lty=2)
+```
+
+## Adjusting for covariates
+
+Let us adjust for sex in the analysis, since there was a difference by sex.  We perform the permutations stratified by sex.
+
+```{r}
+outglucose30Sex <- scanone(cr,addcovar=cr$pheno$sex,pheno.col=log2(cr$pheno$glucose30))
+```
+
+```{r}
+outglucose30SexPerm <- scanone(cr,addcovar=cr$pheno$sex,perm.strata=cr$pheno$sex,pheno.col=log2(cr$pheno$glucose30),n.perm=1024,n.cluster=4)
+```
+
+Did the genome scan change? It made the genome scan (in blue) a little higher at most loci.
+
+```{r}
+plot(outglucose30,outglucose30Sex)
+```
+
+Let us look at the permutations.  Now we have three loci reaching the 5% genomewide threshold.
+
+```{r}
+plot(outglucose30Sex)
+add.threshold(outglucose30Sex,perms = outglucose30SexPerm,alpha = 0.05)
+add.threshold(outglucose30Sex,perms = outglucose30SexPerm,alpha = 0.1, lty=2)
+```
+
+```{r}
+summary(outglucose30Sex)
+```
+
+```{r}
+# create model matrix of numerical variables minus intercept
+sexpgm <- model.matrix(~cr$pheno$sex+cr$pheno$pgm-1)
+# create all combination of the two additive variables to create strata
+sexpgmstrata <- paste(cr$pheno$sex,cr$pheno$pgm,sep="-")
+table(sexpgmstrata)
+```
+
+```{r}
+outglucose30SexPGM <- scanone(cr,addcovar=sexpgm,pheno.col=log2(cr$pheno$glucose30))
+outglucose30SexPGMPerm <- scanone(cr,addcovar=sexpgm,perm.strata=sexpgmstrata,pheno.col=log2(cr$pheno$glucose30),n.perm=1024,n.cluster=4)
+```
+
+```{r}
+plot(outglucose30SexPGM)
+add.threshold(outglucose30SexPGM,perms = outglucose30SexPGMPerm,alpha = 0.05)
+add.threshold(outglucose30SexPGM,perms = outglucose30SexPGMPerm,alpha = 0.1, lty=2)
+```
+
+```{r}
+out21Permstr <- scanone(cr,addcovar=model.matrix(~cr$pheno$sex+cr$pheno$pgm-1),perm.strata=str,pheno.col=log(cr$pheno[,21]),n.perm = 1024,n.clus=4)
+```
+
+```{r}
+summary(outglucose30SexPGM)
+```
+
+## Plotting QTL effects
+
+
+Here is a plot of the trait by the three possible genotypes on the Chromsome 1 locus.  It appears to be a recessive WKY locus.
+
+```{r}
+options(repr.plot.width=8)
+plotPXG(cr,marker = "D1Rat145",pheno.col=log2(cr$pheno$glucose30))
+```
+
+It is easier to see it when we look at the averages and standard errors.
+
+```{r}
+effectplot(cr,mname1 = "D1Rat145",pheno.col=log2(cr$pheno$glucose30))
+```
+
+The same for the Chromosome 5 locus; this one is additive.
+
+```{r}
+effectplot(cr,mname1 = "5@27",pheno.col=log2(cr$pheno$glucose30))
+```
+
+The Chromosome 20 locus is also recessive.
+
+```{r}
+effectplot(cr,mname1 = "20@38",pheno.col=log2(cr$pheno$glucose30))
+```
