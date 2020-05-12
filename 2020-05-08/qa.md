@@ -66,11 +66,11 @@ You can use stratified permutations in R/qtl using the `perm.strata` option of t
 
 > From Milad Mortazavi : Is linear regression more powerful or less than permutation test?
 
-Permutation test is a obtain valid p-values of a test, which can be regression based, or a heuristic-based.  A key assumption is that units (or subsets of units) should be exchangable under the null hypothesis; those units are permuted in the permutation test.  In the genome scan case, under the null hypothesis of no association between any genotype and phenotype, individuals are exhangable, and thus they can be permuted.
+Permutation test is a obtain valid p-values of a test, which can be regression based, or a heuristic-based.  A key assumption is that units (or subsets of units) should be exchangeable under the null hypothesis; those units are permuted in the permutation test.  In the genome scan case, under the null hypothesis of no association between any genotype and phenotype, individuals are exchangeable, and thus they can be permuted.
 
 The power of the permutation test depends on the test statistic used.  In genome scans we generally use regression-based tests (ANOVA, likelihood ratio), and these will likely have the best power when the trait has a symmetric unimodal distribution (hence the desirability of trait transformations).  We can use any other test statistic (such as a t-test, a ranksum test, or any other heuristic-based test).  These will be likely have less power than the standard LOD score (likelihood ratio) if the trait is symmetric unimodal, but may be better in other scenarios when that assumption is grossly violated.
 
-The main purpose of the permutation test is to control the genome-wide false positive rate (i.e. to give you a valid p-value).  It will do so regardless of the test statistic you use, as long as it is reasonable to assume exchangability under the null hypothesis of no association.
+The main purpose of the permutation test is to control the genome-wide false positive rate (i.e. to give you a valid p-value).  It will do so regardless of the test statistic you use, as long as it is reasonable to assume exchangeability under the null hypothesis of no association.
 
 > From Wei-Zen Wei : Please send reference about X chromosome.
 
