@@ -61,7 +61,7 @@ Please ask questions using the chat option at the bottom of your screen.
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "subslide"} -->
-# F$_2$ cross between F344 and WKY rats (Solberg et. al. 2009)
+# F2 cross between F344 and WKY rats (Solberg et. al. 2009)
 
 Wistar–Kyoto (WKY) rat exhibits physiological and behavioral similarities to endophenotypes of
 human depression. A series of study were conducted to examine the genetic connections between behavior and physiology.
@@ -69,6 +69,8 @@ human depression. A series of study were conducted to examine the genetic connec
 ![F344](https://www.criver.com/sites/default/files/2017-11/F344_Rat_417x235_0.jpg) ![WKY](https://www.criver.com/sites/default/files/2017-11/DahlSSRat_417x235_3.jpg)
 
 Solberg Woods LC, Ahmadiyeh N, Baum A, Shimomura K, Li Q, Steiner DF, Turek FW, Takahashi JS, Churchill GA, Redei EE. Identification of genetic loci involved in diabetes using a rat model of depression. Mamm Genome. 2009 Aug;20(8):486-97.
+
+Fig credit: Charles River
 <!-- #endregion -->
 
 ```{r}
@@ -127,9 +129,9 @@ hist((xiong$pheno[,100]),xlog=T,xlab="active state probability",main="Histogram 
 
 If two inbred rat strains show consistent difference in a
 phenotype in the same environment, we know the difference must
-be genetic. 
+be genetic.
 
-By crossing two rat strains we can create a population of 
+By crossing two rat strains we can create a population of
 (approximately) randomly shuffled genomes.
 
 Association between phenotype and genotype may be interpreted to
@@ -139,12 +141,20 @@ Examples include, backcross and intercross populations,
 heterogeneous stock, recombinant inbred lines.
 <!-- #endregion -->
 
+<!-- #region slideshow={"slide_type": "skip"} -->
+# Intercross and heterogeneous stock
+
+![CrossFigure](https://secureservercdn.net/198.71.233.138/uh7.aba.myftpupload.com/wp-content/uploads/2014/11/HSratsFig1.png)
+
+Credit: [Ratgenes.org](https://ratgenes.org/cores/core-b/)
+<!-- #endregion -->
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Causal diagram
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "subslide"} -->
-      
+
       Meiosis -----> QTL ---------> Phenotype
          |           :                 :
          |           :                 :
@@ -160,7 +170,7 @@ Since the QTL is not directly observable, we test for association between geneti
 <!-- #region slideshow={"slide_type": "subslide"} -->
 # Causal diagram: covariate
 
-          -------> Marker ............. 
+          -------> Marker .............
          |           |                 :
          |           |                 :
       Meiosis -----> QTL ---------> Phenotype
@@ -179,7 +189,7 @@ Since the QTL is not directly observable, we test for association between geneti
 # Causal diagram: mediator
 
 
-          -------> Marker ............. 
+          -------> Marker .............
          |           |                 :
          |           |                 :
       Meiosis -----> QTL ---------> Phenotype
@@ -238,7 +248,7 @@ Finding a QTL is usually the first step in dissecting the cause of the trait var
          |           :                 :
          |           :                 :
           -------> Marker .............:        
-          
+
 - Meiosis randomizes the (unobserved) QTL and (observed) marker.  
 - The QTL _causes_ the phenotype.
 - This leads us to observe an _apparent_ association between marker and phenotype.
@@ -284,5 +294,5 @@ Since the QTL is not directly observable, we test for association between geneti
 - Churchill and Doerge (1994) Empirical threshold values for quantitative trait mapping. Genetics. 1994 Nov;138(3):963-71.
 - Sen and Churchill (2001) A statistical framework for quantitative trait mapping. Genetics. 2001 Sep;159(1):371-87.
 - Broman et. al. (2003) R/qtl: QTL mapping in experimental crosses. Bioinformatics. 2003 May 1;19(7):889-90.
-- Broman et. al. (2006) The X chromosome in quantitative trait locus mapping. Genetics. 2006 Dec;174(4):2151-8. 
+- Broman et. al. (2006) The X chromosome in quantitative trait locus mapping. Genetics. 2006 Dec;174(4):2151-8.
 - Sloan et al, (2016), GeneNetwork: framework for web-based genetics, Journal of Open Source Software, 1(2), 25, doi:10.21105/joss.00025
