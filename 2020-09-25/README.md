@@ -15,3 +15,7 @@
 
 [Is my network preserved and reproducible?](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1001057) - this paper from Peter Langfelder, Rui Luo, Michael C. Oldham, and Steve Horvath includes details about calculating preservation of WGCNA co-expression modules
 
+### Materials from Webinar
+
+[Webinar slides](WGCNA_webinar.pdf)
+
