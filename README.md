@@ -6,7 +6,9 @@ Below is a list of webinars with additional material such as slides, notebooks, 
 
 | Date       | Speaker         | Topic                                                    | Additional resources  |
 |------------|-----------------|----------------------------------------------------------|-----------------------|
+| 2020-11-20 | Saunak Sen | [Sketching alternate realities: An introduction to causal inference in genetic studies](2020-11-20/README.md) | [Slides](2020-11-20/causal.pdf)
 | 2020-10-23 | Eliss Chesler and Erich Baker | [Introduction to GeneWeaver: Integrating and analyzing heterogeneous functional genomics data](2020-10-23/README.md) | [Slides](2020-10-23/IntroToGeneWeaver.CheslerE.pdf)
+| 2020-10-09 | Saunak Sen | [Using Genetic and Non-Genetic Covariates in QTL Studies](2020-10-09/README.md) | [Slides](2020-10-09/covariates-lmm.ipynb)
 | 2020-09-25 | Laura Saba     | [Introduction to Weighted Gene Co-expression Analysis](2020-09-25/README.md)                                            | [Slides](2020-09-25/WGCNA_webinar.pdf) |
 | 2020-09-11 | Saunak Sen      | [Sex as a biological covariate in genetic analysis](2020-09-11/README.md)                                            | [Slides](2020-09-11/sex-biological-covariate.ipynb) |
 | 2020-08-28 | Laura Saba | [Identifying genes from QTL using RNA expression and the PhenoGen website](2020-08-28/README.md) | [Slides](2020-08-28/PhenoGen_webinar.pdf)
