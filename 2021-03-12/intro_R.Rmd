@@ -1,0 +1,488 @@
+---
+title: "Become a UseR: a brief tour in R"
+author: "Gregory Farage and Saunak Sen"
+date: "2021-03-12"
+output: 
+  revealjs::revealjs_presentation:
+    transition: none
+    center: false
+---
+<style type="text/css">
+  .reveal p {
+    text-align: left;
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }  
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Goals
+
+* Why should one use/learn R?
+* How to install R/Rstudio
+* Learn about R basics: variables, programming, functions
+* Learn about the R package ecosystem that extends its capabilities
+* See a basic statistical analysis example
+* Learn about additional resources 
+
+
+
+# What is R?
+R is an open-source software and programming language developed as an environment for statistical computing and graphics. 
+
+## What is R?
+
+```{r fig2, fig.height = 8, fig.width = 14, fig.align = "center", echo= FALSE}
+# knitr::include_graphics(path,  dpi = NULL)
+source("timeline.R")
+```
+
+<p><small><i>(Generated in R with ggplot2 package)</i></small></p>
+
+## What is R?
+
+* R is a very popular tool for data analysis, statistical modeling and visualization, because it excels in statistical functions and modeling.   
+* In addition to the academic and research field, it is also widely used by: 
+  * Top tier companies (e.g., Google, Facebook, Twitter, Uber)
+  * IT companies (e.g., Accenture, Capgemini, IBM, HP)
+  * Financial institutions (e.g., American Express, Bank of America, Citibank)
+    
+<br>
+<p><small><i>Ref: https://www.listendata.com/2016/12/companies-using-r.html</i></small></p>
+
+# Why use the R language?
+
+* Open source, transparent algorithms
+* Reproducible data analysis
+* Free of cost
+* Rich package ecosystem: a large collection of tools for data analysis
+* Access to advanced libraries
+* Extensible by user
+
+## Why use the R language?
+
+* A great language to start programming: 
+    * A lot of written tutorial for beginners and noncoders
+    * A large community that can help solve bugs or interpret package functionality
+
+
+# R installation
+
+* https://cran.r-project.org/
+
+<center>
+<img align="center" src="https://cran.r-project.org/Rlogo.svg" alt="R" style="height: 150px;"/>
+</center>
+
+
+
+# A first look at R
+
+<center>
+<img align="center" src="https://cran.r-project.org/Rlogo.svg" alt="R" style="height: 150px;"/>
+</center>
+
+Stories behind [R release names](https://livefreeordichotomize.com/2017/09/28/r-release-names/)
+
+
+# R Studio installation
+
+* https://rstudio.com/products/rstudio/download/
+
+
+<center>
+<img align="center" src="https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg" alt="R" style="height: 150px;"/>
+</center>
+
+
+# Exploring R Studio
+
+<center>
+<img align="center" src="https://d33wubrfki0l68.cloudfront.net/62bcc8535a06077094ca3c29c383e37ad7334311/a263f/assets/img/logo.svg" alt="R" style="height: 150px;"/>
+</center>
+
+
+
+# R data type
+
+A data type is a variable attribute which indicates to the R interpreter how you expect to use the variable in your program. The basic data types used in R are: 
+
+* Integer, i.e., natural numbers
+```
+varA <- 7L
+```
+
+* Numeric, i.e., decimal numbers and natural number
+```
+varB1 <- 3.14
+varB2 <- 8
+```
+
+* Complex, i.e., complex number
+```
+varC <- 2+ 7i
+```
+
+## R data type
+
+* Logical, i.e., boolean
+```
+varD1 <- TRUE
+varD2 <- FALSE
+```
+
+* Character, i.e., string (text)
+```
+varE <- "apples"
+```
+
+# R data structure
+
+There exists different ways to store a set of values in the computer. A specific way to organize the data set is called a data structure. In R programming, the basic data structures are:
+
+* Vectors
+* Factors
+* Matrices
+* Lists
+* Data frames  
+
+
+## Vectors
+
+* A vector is a collection of elements with identical data type. 
+```{r vectors}
+# The function c() concatenates elements to create a vector
+
+vec1 <- c("March", "July", "September"); print(vec1)
+
+vec2 <- c(7, 22, 19); print(vec2)
+
+vec3 <- c(7, "test", 19); print(vec3)
+
+```
+
+
+## Factors
+
+* A factor is a vector that is used to store categorical data. 
+* The categories' labels are called levels.
+
+
+```{r factors}
+# Use function factor() to convert the vector into a factor
+fac1 <- factor(c("A", "B", "B", "A", "D"))
+fac1
+
+
+# Define explicitly levels to include group C
+fac2 <- factor(c("A", "B", "B", "A", "D"), levels = c("A", "B", "C", "D"))
+fac2
+
+```
+
+## Matrices
+
+* A matrix is a collection of values organized in a two-dimensional rectangular layout.
+* All matrix elements have the same data type.
+
+```{r matrices1}
+# function matrix() converts a vector into a matrix 
+# by specifying number of rows and columns.
+mat1 <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8), nrow = 2, ncol= 4); print(mat1)
+
+```
+
+## Matrices
+
+```{r matrices2}
+# Combine vectors with cbind() (or rbind()) function 
+mat2 <- cbind(c(1,2), c(3,4), c(5,6), c(7,8)); print(mat2)
+
+# Combine with rbind() function 
+mat3 <- rbind(c(1,2), c(3,4), c(5,6), c(7,8)); print(mat3)
+
+```
+
+## Lists
+
+* A list is a collection of elements whose data type and data structure can be different from each other.
+
+```{r lists1}
+# function list( ) concatenates objects to generate a list
+lst1 <- list(vec1, mat1, sum); print(lst1)
+
+```
+
+## Lists
+
+```{r lists2}
+# It is possible to add names to elements of the list 
+lst2 <- list(month = vec1, mymatrix = mat1, sum); print(lst2)
+
+```
+
+## Data frames
+
+* Data frames are a two-dimensional structures used to store tabular data.    
+* They are structured as a list of vectors having the same length, and where each vector may have a different data type.  
+* Data frames have column names, and may have row names.
+  
+
+```{r dataframes_1}
+# Build a data frame from the previous vector vec1 and vec2 
+df1 <- data.frame(month = vec1, day = vec2)
+df1
+```
+
+
+# Accessing elements from a data structure
+
+* To extract one element or several elements from the basic data structures, use the square brackets `[ ]` specifying the position (aka index) of elements.
+* In R, the index of the first elements starts with 1.
+
+
+## Accessing elements from a Vector
+
+```{r echo = FALSE}
+noquote("Vec1:")
+print(vec1)
+```
+
+```{r accessingV}
+# To access the second element
+vec1[2]
+# To access the first and the third element
+vec1[c(1,3)]
+```
+
+## Accessing elements from a Factor
+
+```{r echo = FALSE}
+noquote("fac2:")
+print(fac2)
+```
+
+```{r accessingF}
+# To access the second element
+fac2[2]
+# To access the first and the third element
+fac2[c(2,4)]
+```
+
+
+## Accessing elements from a Matrix
+
+```{r echo = FALSE}
+print(mat1)
+```
+
+```{r accessingM1}
+# To access one element specify the row and column index
+mat1[2,3]
+# To access the second column
+mat1[ ,2]
+
+```
+
+## Accessing elements from a Matrix
+
+```{r echo = FALSE}
+print(mat1)
+```
+
+```{r accessingM2}
+# To access several elements on different rows and columns
+mat1[c(1,2), c(2,3)]
+```
+
+## Accessing elements from a List
+
+```{r echo = FALSE}
+print(lst1)
+```
+
+```{r accessingL1}
+# To access one object of the list use double square brackets [[]]
+lst1[[2]]
+
+```
+
+
+## Accessing elements from a List
+
+```{r echo = FALSE}
+print(lst1)
+```
+
+```{r accessingL2}
+# To access elements in object use the double square bracket [[ ]] 
+# followed by the conventional indexing
+lst1[[2]][2, c(1:3)]
+```
+
+
+
+## Accessing elements from a Data frame
+
+```{r echo = FALSE}
+print(df1)
+```
+
+```{r accessingD1}
+# To access elements of data frame, on can use the same indexing of the matrix 
+df1[2, 1]
+# We also can use the name of the column such as
+df1$month[2]
+```
+
+## Accessing elements from a Data frame
+
+```{r echo = FALSE}
+print(df1)
+```
+
+```{r accessingD2}
+# Replace "March" by "April" 
+df1$month[1] <- "April"
+# Replace the first date by 5
+df1$day[1] <- 5
+df1
+
+```
+
+# Programming a function in R
+
+* In R programming, a function is a set of instructions that performs a specific task.
+* R offers a large number of built-in functions; moreover, it is possible to create or customize functions too. 
+* Generally, a function uses one or more argument part as inputs, then it processes arguments in the body part, and finally, it may return an output.   
+* A rule of thumb is that if you are performing a task three or more times, you should write a function for that task.
+
+## Programming a function in R
+
+The standard syntax to create a function generally looks like the following example:    
+    
+```
+function_name <- function(arg_1, arg_2, arg_3){
+    
+    statements_to_be_processed
+    
+    return(output_variable_name)
+}
+```
+
+## Programming a function in R
+
+```{r function}
+# Assign square to a function with one argument, x
+square <- function(x)
+    {
+       sqr <- x^2
+       
+       return(sqr)
+    }
+
+```
+
+A few points to note:
+
+* The name of the function is `square` which is on the left hand side of the assignment
+* The function called `square` takes one argument, called `x`.
+* The block of code to be executed when the `square` function is called is enclosed in curly braces(`{}`).
+
+## Programming a function in R
+
+```{r function2}
+# Use function square
+square(11)
+
+```
+
+# Reading data in R
+
+One of the first steps in any data analysis project is to read data from a file. Data can come in myriad forms, but the most common and convenient form is the spreadsheet.
+
+Assuming that your data is in a text file, R provides essential reading functions to turn a text file into a data frame according to a delimiter (or field separator).   
+
+
+| Functions     |                   Delimiter |
+|---------------|----------------------------:|
+| `read.csv()`  |                       comma |
+| `read.csv2()` |                   semicolon |
+| `read.fwf()`  |       arbitrary fixed width |
+| `read.delim()`|                         tab |
+| `read.table()`|      customizable delimiter |
+
+
+
+# Packages in R
+
+A package is a bundle of R functions, documentation, tests and sometime data sets. They are usually developed to add specific functionality. 
+
+* To add a a package in your library, run the `install.packages()` function, such as:   
+
+```
+install.packages("xlsx")
+```
+
+* To load a library, use the function `library()`:
+
+```
+library(xlsx)
+```
+
+https://cran.r-project.org/web/packages/
+
+# Bioconductor
+
+"The Bioconductor mission is to promote the statistical analysis and comprehension of current and emerging high-throughput biological assays."
+ 
+
+"Most Bioconductor components are distributed as R packages. The functional scope of Bioconductor packages includes the analysis of DNA microarray, sequence, flow, SNP, and other data."
+
+
+
+<center>
+<img align="center" src="https://www.bioconductor.org/images/logo_bioconductor.gif" alt="R" style="height: 150px;"/>
+</center>
+<p><small><i>Ref: https://www.bioconductor.org</i></small></p>
+
+
+# Basic statistical analysis example
+```{r include= FALSE, echo = FALSE}
+source("script_example.R")
+```
+
+```{r fig.height = 4, fig.width = 5, fig.align = "center", echo = FALSE}
+print(p)
+```
+
+
+# Conclusion
+
+
+**Pros of R Language**
+
+* R is an open-source.
+* R is cross-platform which runs on many operating systems. 
+* R has a large community and open-source resources 
+* R offers vast visualization and interactive tools
+* New technology and ideas often appear first in R.
+
+**Cons of R Language**
+
+* The quality of some packages in R is less than perfect.
+* There is no customer support of R Language if something does not work.
+* Designed for interactive data analysis; very large data sets and computation may require addition adjustment.
+
+# Resources
+
+* [Learning R resources link](https://github.com/OSGA-OPAR/quant-genetics-webinars/blob/master/2021-03-12/Resources.md)
+
