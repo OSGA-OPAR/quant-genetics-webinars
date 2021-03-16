@@ -18,7 +18,7 @@ We introduce R programming language and outline the benefits of learning R.  We 
 **Material for webinar**
 - [Slides](intro_R.html) for talk (HTML format).
 - [Source code](intro_R.Rmd) used to generate the slides(RMD format).
-- [Resources](Resources.Rmd) links offering a variety of resources(MD format).
+- [Resources](Resources.md) links offering a variety of resources(MD format).
 - [Script example](script_example.R) used to generate the script example (R format).
 - [Basic statistical analysis example](intro-r.ipynb) notebook to generate the analysis example (ipynb format).
 - [Script timeline](timeline.R) source code used to generate the timeline plot (R format).
