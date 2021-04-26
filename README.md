@@ -6,6 +6,8 @@ Below is a list of webinars with additional material such as slides, notebooks, 
 
 | Date | Speaker | Topic | Additional resources |
 | ---- | ------- | ----- | -------------------- |
+| 2021-04-23 | Hao Chen and Laura Saba | [Introduction to the Hybrid Rat
+Diversity Panel: A renewable rat panel for genetic studies of addiction-related traits](2021-04-23/README.md) | [Slides](2021-04-23/HRDP_webinar.pdf) |
 | 2021-04-09 | Katerina Kechris | [Introduction to Metabolomics Platforms and Data Analysis](2021-04-09/README.md) | [Slides](2021-04-09/Webinar-Metabolomics.pdf)|
 | 2021-03-26 | Gregory Farage and Saunak Sen | [Landing on Jupyter: A guided tour of interactive notebooks](2021-03-26/README.md) | [Slides](2021-03-26/Jupyter.pdf)|
 | 2021-03-12 | Gregory Farage and Saunak Sen | [Become a UseR: a brief tour in R](2021-03-12/README.md) | [Slides](2021-03-12/intro_R.html)|
