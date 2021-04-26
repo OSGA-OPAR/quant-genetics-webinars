@@ -11,7 +11,7 @@ Diversity Panel: A renewable rat panel for genetic studies of addiction-related 
 | 2021-04-09 | Katerina Kechris | [Introduction to Metabolomics Platforms and Data Analysis](2021-04-09/README.md) | [Slides](2021-04-09/Webinar-Metabolomics.pdf)|
 | 2021-03-26 | Gregory Farage and Saunak Sen | [Landing on Jupyter: A guided tour of interactive notebooks](2021-03-26/README.md) | [Slides](2021-03-26/Jupyter.pdf)|
 | 2021-03-12 | Gregory Farage and Saunak Sen | [Become a UseR: a brief tour in R](2021-03-12/README.md) | [Slides](2021-03-12/intro_R.html)|
-| 2021-02-26 | Abraham Palmer | [From GWAS to gene: what are the essential analyses and how do we bring them together using heterogeneous stock rats?](2021-02-26/README.md) | [Slides](2021-02-26/Palmer talk 2-26-21.pdf) |
+| 2021-02-26 | Abraham Palmer | [From GWAS to gene: what are the essential analyses and how do we bring them together using heterogeneous stock rats?](2021-02-26/README.md) | [Slides](2021-02-26/Palmer%20talk%202-26-21.pdf) |
 |2021-02-12 | Laura Saba |[A beginner’s guide to bulk RNA-Seq analysis](2021-02-12/README.md)|[Slides](2021-02-12/BeginnersRNASeq_webinar.pdf)|
 | 2020-11-20 | Saunak Sen | [Sketching alternate realities: An introduction to causal inference in genetic studies](2020-11-20/README.md) | [Slides](2020-11-20/causal.pdf)|
 | 2020-10-23 | Elissa Chesler and Erich Baker | [Introduction to GeneWeaver: Integrating and analyzing heterogeneous functional genomics data](2020-10-23/README.md) | [Slides](2020-10-23/IntroToGeneWeaver.CheslerE.pdf)|
