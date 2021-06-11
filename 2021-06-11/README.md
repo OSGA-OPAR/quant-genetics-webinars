@@ -1,8 +1,8 @@
 # **Identifying sample mix-ups in eQTL data**
 
-[Karl Broman](https://kbroman.org), PhD
-Professor
-Department of Biostatistics and Medical Informatics
+[Karl Broman](https://kbroman.org), PhD <br/>
+Professor <br/>
+Department of Biostatistics and Medical Informatics <br/>
 University of Wisconsin&ndash;Madison
 
 
