@@ -6,8 +6,10 @@ Below is a list of webinars with additional material such as slides, notebooks, 
 
 | Date | Speaker | Topic | Additional resources |
 | ---- | ------- | ----- | -------------------- |
+| 2021-09-24 | Karl Broman | [Organizing Data in Spreadsheets](2021-09-24/README.md) | [Slides](https://kbroman.org/Talk_DataOrg/dataorg.pdf)|
 | 2021-09-10 | Hao Chen | [A Rube Goldbergian Approach to Scheduling Rodent Behavior Experiments and Data Collection](2021-09-10/README.md) | [Slides](https://chen42.github.io/slides/behavflow.html) |
 | 2021-08-26 | Katerina Kechris | [Introduction to DNA Methylation Platforms and Data Analysis](2021-08-26/README.md) | [Slides](2021-08-26/Webinar-Methylome.pdf) |
+| 2021-06-11 | Karl Broman | [Identifying Sample Mix-ups in eQTL Data](2021-06-11/README.md) | [Slides](https://kbroman.org/Talk_OSGA2021/osga2021.pdf)|
 | 2021-04-23 | Hao Chen and Laura Saba | [Introduction to the Hybrid Rat Diversity Panel: A renewable rat panel for genetic studies of addiction-related traits](2021-04-23/README.md) | [Slides](2021-04-23/HRDP_webinar.pdf) |
 | 2021-04-09 | Katerina Kechris | [Introduction to Metabolomics Platforms and Data Analysis](2021-04-09/README.md) | [Slides](2021-04-09/Webinar-Metabolomics.pdf)|
 | 2021-03-26 | Gregory Farage and Saunak Sen | [Landing on Jupyter: A guided tour of interactive notebooks](2021-03-26/README.md) | [Slides](2021-03-26/Jupyter.pdf)|
