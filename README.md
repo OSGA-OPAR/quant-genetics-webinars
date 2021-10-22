@@ -6,6 +6,8 @@ Below is a list of webinars with additional material such as slides, notebooks, 
 
 | Date | Speaker | Topic | Additional resources |
 | ---- | ------- | ----- | -------------------- |
+| 2021-10-22 | Laura Saba | [Guide to evaluating the application of machine learning methods in genetics literature](2021-10-22/README.md) | [Slides](2021-10-22/MachineLearningIntro.2021-10-22.pdf) |
+| 2021-10-08 | Xusheng Wang and Rob Williams | [A Primer on Brain Proteomics and protein-QTL Analysis for Substance Use Disorders](2021-10-08/README.md) | |
 | 2021-09-24 | Karl Broman | [Organizing Data in Spreadsheets](2021-09-24/README.md) | [Slides](https://kbroman.org/Talk_DataOrg/dataorg.pdf)|
 | 2021-09-10 | Hao Chen | [A Rube Goldbergian Approach to Scheduling Rodent Behavior Experiments and Data Collection](2021-09-10/README.md) | [Slides](https://chen42.github.io/slides/behavflow.html) |
 | 2021-08-26 | Katerina Kechris | [Introduction to DNA Methylation Platforms and Data Analysis](2021-08-26/README.md) | [Slides](2021-08-26/Webinar-Methylome.pdf) |
