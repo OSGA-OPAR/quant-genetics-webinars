@@ -24,7 +24,7 @@ Rajkomar A, Dean J, Kohane I. Machine Learning in Medicine. N Engl J Med. 2019 A
 
 Libbrecht MW, Noble WS. Machine learning applications in genetics and genomics. Nat Rev Genet. 2015 Jun;16(6):321-32. doi: 10.1038/nrg3920. Epub 2015 May 7. PMID: 25948244; PMCID: PMC5204302.
 
-###Other Links Referenced During Discussion
+### Other Links Referenced During Discussion
 
 Rob's Salmon fMRI study - https://www.wired.com/2009/09/fmrisalmon/
 
