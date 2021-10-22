@@ -27,6 +27,7 @@ Libbrecht MW, Noble WS. Machine learning applications in genetics and genomics. 
 ###Other Links Referenced During Discussion
 
 Rob's Salmon fMRI study - https://www.wired.com/2009/09/fmrisalmon/
+
 Hao Chen's MLOps link - https://www.deeplearning.ai/wp-content/uploads/2021/06/MLOps-From-Model-centric-to-Data-centric-AI.pdf
 
 
