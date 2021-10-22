@@ -1,4 +1,4 @@
-# **Introduction to DNA Methylation Platforms and Data Analysis** 
+# **Guide to evaluating the application of machine learning methods in genetics literature** 
 
 [Laura Saba, PhD](https://www.thesabalab.com/)
 
