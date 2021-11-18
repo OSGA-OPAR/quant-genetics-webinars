@@ -9,7 +9,7 @@
     
     2021-11-12
 
-- Outline [Pluto notebook](outline.html) | [Source](outline.jl)
+- Outline [Pluto notebook](https://htmlview.glitch.me/?https://github.com/senresearch/quant-genetics-webinars/blob/master/2021-11-12/outline.html) | [Source](outline.jl)
 - [Overview of key features](KeyfeaturesOverview.pdf)
 - [Calling other languages](callLanguageFunctions.ipynb)
 - [Simple data analysis](data-analysis.ipynb)
