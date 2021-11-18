@@ -12,6 +12,6 @@
 - Outline [Pluto notebook](outline.html) | [Source](outline.jl)
 - [Overview of key features](KeyfeaturesOverview.pdf)
 - [Calling other languages](callLanguageFunctions.ipynb)
-- [Simple data analysis](data0analysis.ipynb)
+- [Simple data analysis](data-analysis.ipynb)
 - [Optimization](optim.ipynb)
 - [Fitting neural nets](FluxNNShowcase.ipynb) 
