@@ -6,6 +6,7 @@ Below is a list of webinars with additional material such as slides, notebooks, 
 
 | Date | Speaker | Topic | Additional resources |
 | ---- | ------- | ----- | -------------------- |
+| 2021-11-12 | Gregory Farage and Saunak Sen | [Julia: a fast, friendly, and powerful language for data science](2021-11-12/README.md) |
 | 2021-10-22 | Laura Saba | [Guide to evaluating the application of machine learning methods in genetics literature](2021-10-22/README.md) | [Slides](2021-10-22/MachineLearningIntro.2021-10-22.pdf) |
 | 2021-10-08 | Xusheng Wang and Rob Williams | [A Primer on Brain Proteomics and protein-QTL Analysis for Substance Use Disorders](2021-10-08/README.md) | |
 | 2021-09-24 | Karl Broman | [Organizing Data in Spreadsheets](2021-09-24/README.md) | [Slides](https://kbroman.org/Talk_DataOrg/dataorg.pdf)|
