@@ -2,10 +2,13 @@
 
 The NIDA Center of Excellence in Omics, Systems Genetics, and the Addictome has put together a webinar series, Quantitative Genetics Tools for Mapping Trait Variation to Mechanisms, Therapeutics, and Interventions. The goal of this series is to transverse the path from trait variance to QTL to gene.
 
-Below is a list of webinars with additional material such as slides, notebooks, and answers to questions from the audience.  Readers are encouraged to interact using the Issues section.
+Below is a list of webinars with additional material such as slides, notebooks, and answers to questions from the audience.  Readers are encouraged to interact using the Issues section. Click here https://bit.ly/osga_YouTube to access our YouTube Channel with the recordings of the webinars
 
 | Date | Speaker | Topic | Additional resources |
 | ---- | ------- | ----- | -------------------- |
+| 2022-04-22 | Alexander S. Hatoum and Arpana Agrawal | [Genome-wide Association Study Summary Statistics - Where to find them and how to use them](2022-04-22/README.md) | [Slides](2022-04-22/README.md)
+| 2022-04-08 | Molly Bogue | Mouse Phenome Database: Resources and analysis tools for curated and integrated primary mouse phenotype and genotype data | 
+| 2022-02-25 | G. Allan Johnson | [HiDiver: A Suite of Methods to Merge Mgenetic Resonance Histology, Light Shee Microscopu, and Complete Brain Delineations](2022-02-25/README.md) | [other resources](2022-02-25/README.md)
 | 2021-11-12 | Gregory Farage and Saunak Sen | [Julia: a fast, friendly, and powerful language for data science](2021-11-12/README.md) | [Slides, notebooks and other resources](2021-11-12/README.md)
 | 2021-10-22 | Laura Saba | [Guide to evaluating the application of machine learning methods in genetics literature](2021-10-22/README.md) | [Slides](2021-10-22/MachineLearningIntro.2021-10-22.pdf) |
 | 2021-10-08 | Xusheng Wang and Rob Williams | [A Primer on Brain Proteomics and protein-QTL Analysis for Substance Use Disorders](2021-10-08/README.md) | |
