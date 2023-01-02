@@ -4,5 +4,4 @@
 
 Presented on June 12, 2020
 
-- [Question/Answer session](in progress) Responses to questions submitted in the chat box during the webinar
 - [Webinar slides](eQTL_webinar_2020-06-12.pdf) 
