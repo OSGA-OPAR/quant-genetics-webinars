@@ -2,6 +2,5 @@
 
 ## Rob Williams
 
-- [Webinar slides](Using_GeneNetwork_22May2020v8.pdf) 
-
-[Link to YouTube video](https://youtu.be/LwpXzLHX9aM)
+- [Webinar slides](Using_GeneNetwork_22May2020v8.pdf)
+- [Link to YouTube video](https://youtu.be/LwpXzLHX9aM)
