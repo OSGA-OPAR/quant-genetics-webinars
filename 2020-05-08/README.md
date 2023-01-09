@@ -11,3 +11,6 @@
 To view the Jupyter notebooks, just click on the links.
 
 To modify or interact with the notebooks, you will have to [download Jupyter and R, and set them to work together](https://www.datacamp.com/community/blog/jupyter-notebook-r).  That way you can tweak the analysis, or do a similar analysis with a different dataset.
+
+[Link to YouTube Video](https://youtu.be/leY3kPmnLaI)
+
