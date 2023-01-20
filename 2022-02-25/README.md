@@ -1,10 +1,10 @@
 # **HiDiver: A Suite of Methods to Merge Magnetic Resonance Histology, Light Sheet Microscopy, and Complete Brain Delineations** 
 
-[Dr. G Allan Johnson](https://bme.duke.edu/faculty/allan-johnson)
+[Dr. G Allan Johnson](https://bme.duke.edu/faculty/allan-johnson) <br/>
 
-Charles E Putman Professor of Radiology, Physics, and Biomedical Engineering
+Charles E Putman Professor of Radiology, Physics, and Biomedical Engineering <br/>
 
-Duke University
+Duke University <br/>
 
 Durham North Carolina
 
