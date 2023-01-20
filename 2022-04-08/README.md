@@ -1,8 +1,8 @@
 # **Mouse Phenome Database: Resources and analysis tools for curated and integrated primary mouse phenotype and genotype data** 
 
-Molly Bogue and Robyn Ball
+Molly Bogue and Robyn Ball <br/>
  
-Other senior members of the MPD team: Elissa Chesler, Vivek Philip, Dave Walton
+Other senior members of the MPD team: Elissa Chesler, Vivek Philip, Dave Walton <br/>
 
 The Jackson Laboratory
  
