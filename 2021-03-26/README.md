@@ -10,6 +10,8 @@ Gregory Farage and Saunak Sen
 - [Example notebook: Interactive sliders](consult-interactive.ipynb) Use Jupyter notebook
 - [Example notebook: Notebook on using SoS](qtl-intro-SoS.ipynb)
 
+[Link to YouTube Recording](https://youtu.be/GVzUNEmpanI)
+
 ### Notes from the live lecture and chat
 
 You can try notebooks at: https://jupyter.org/try and https://colab.research.google.com.

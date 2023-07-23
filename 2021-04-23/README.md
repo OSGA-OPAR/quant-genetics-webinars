@@ -1,26 +1,17 @@
 # **Introduction to the Hybrid Rat Diversity Panel: A renewable rat panel for genetic studies of addiction-related traits** 
 
-Hao Chen, PhD
-
-Associate Professor
-
-Department of Pharmacology, Addiction Science, and Toxicology
-
+Hao Chen, PhD </br>
+Associate Professor </br>
+Department of Pharmacology, Addiction Science, and Toxicology </br>
 University of Tennessee Health Science Center
 
-
-
-Laura Saba, PhD
-
-Associate Professor
-
-Department of Pharmaceutical Sciences
-
-Skaggs School of Pharmacy and Pharmaceutical Sciences
-
+Laura Saba, PhD </br>
+Associate Professor </br>
+Department of Pharmaceutical Sciences </br>
+Skaggs School of Pharmacy and Pharmaceutical Sciences </br>
 University of Colorado Anschutz Medical Campus
 
-
+[Link to YouTube Recording](https://youtu.be/dYIiv01IetQ)
 
 ### Materials from Webinar
 

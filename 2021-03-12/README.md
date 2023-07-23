@@ -23,3 +23,5 @@ We introduce R programming language and outline the benefits of learning R.  We 
 - [Basic statistical analysis example](intro-r.ipynb) notebook to generate the analysis example (ipynb format).
 - [Script timeline](timeline.R) source code used to generate the timeline plot (R format).
 - [Script flat violin plot](geom_flat_violin.R) source code used to generate the flat violin plot (R format) ([original source](https://gist.github.com/dgrtwo/eb7750e74997891d7c20#file-geom_flat_violin-r)).
+
+[Link to YouTube Recording](https://youtu.be/25-X8_oXBSY)

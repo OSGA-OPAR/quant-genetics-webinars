@@ -1,16 +1,20 @@
 # **Guide to evaluating the application of machine learning methods in genetics literature** 
 
-[Laura Saba, PhD](https://www.thesabalab.com/)
+[Laura Saba, PhD](https://www.thesabalab.com/)<br/>
+Associate Professor<br/>
+Department of Pharmaceutical Sciences<br/>
+Skaggs School of Pharmacy and Pharmaceutical Sciences<br/>
+University of Colorado Anschutz Medical Campus<br/>
+Aurora, CO
 
-Associate Professor
-
-Department of Pharmaceutical Sciences
-
-Skaggs School of Pharmacy and Pharmaceutical Sciences
-
-University of Colorado Anschutz Medical Campus
+**Goals of this webinar:**
+* To describe the relationship between artificial intelligence (AI), machine learning (ML), and deep learning (DL).
+* To describe general scenarios when ML is appropriate.
+* To understand methods for comparing the performance of different ML algorithms 
+* To layout general criteria to examine when evaluating literature that includes machine learning algorithms
 
 
+[Link to YouTube Recording](https://youtu.be/JEt7ZZD9Th0)
 
 ### Materials from Webinar
 

@@ -16,7 +16,8 @@
 - [Optimization](optim.ipynb)
 - [Fitting neural nets](FluxNNShowcase.ipynb) 
      
-       
+[Link to YouTube Recording](https://youtu.be/cA7d1Zz19OQ)
+      
 ### Resources
 
 #### Tutorial

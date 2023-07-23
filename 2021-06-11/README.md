@@ -5,6 +5,7 @@ Professor <br/>
 Department of Biostatistics and Medical Informatics <br/>
 University of Wisconsin&ndash;Madison
 
+[Link to YouTube Recording](https://youtu.be/h5gF7YnffeI)
 
 ### Materials from Webinar
 

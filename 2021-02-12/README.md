@@ -1,6 +1,9 @@
 # **A beginner’s guide to bulk RNA-Seq analysis** 
 
-## Laura Saba, PhD
+Laura Saba, PhD </br>
+Department of Pharmaceutical Sciences </br>
+Skaggs School of Pharmacy and Pharmaceutical Scienes
+
 
 ### Materials from Webinar
 
